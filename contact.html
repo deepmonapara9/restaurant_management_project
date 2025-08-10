@@ -1,0 +1,89 @@
+<html>
+
+    <head>
+        <title>
+            Contact US
+        </title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                backgrond-color: #fafafa;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                backgrond-color: #ff6347;
+                color: white;
+                text-align: center;
+                padding: 15px;
+            }
+
+            nav {
+                backgrond-color: #333;
+                padding: 10px;
+                text-align: center;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 15px;
+            }
+
+            nav a:hover {
+                backgrond-color: #ff6347;
+                border-radius: 5px;
+            }
+
+            main {
+                max-width: 600px;
+                margin: 30px auto;
+                backgrond: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            .container-info {
+                margin-top: 20px;
+            }
+
+            .contant-info p {
+                margin: 8px 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Tasty Bites</h1>
+        </header>
+
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'menu' %}">Menu</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+
+        <main>
+            <h1>Contact Us</h1>
+            <p>
+                We're glad to have you here.
+            </p>
+
+            <div class="container-info">
+                <p><strong>Phone:</strong> +91 1234567890</p>
+                <p><strong>Email:</strong> tastybites@email.com</p>
+                <p><strong>Address:</strong> 123 street, Rajkot</p>
+            </div>
+        </main>
+    </body>
+
+</html>
