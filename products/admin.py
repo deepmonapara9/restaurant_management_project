@@ -4,7 +4,10 @@ from .models import *
 
 # Custom Admins
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ['item_name','item_price','created_at']
+    list_display = ('name','price','available')
+    list_filter = ('available')
+    search_fields = ('name', 'description')
+
 
 
 # Register your models here.
