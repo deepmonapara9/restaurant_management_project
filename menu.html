@@ -1,42 +1,29 @@
 <html>
     <head>
-        <title>Menu - Tasty Bites</title>
-        <style>
-            body {
-                font-family: sans-serif;
-                padding: 20px;
-            }
-
-            h1 {
-                color: #333;
-            }
-
-            .menu {
-                list-style-type: none;
-                padding: 0;
-            }
-
-            .menu li {
-                background-color: #f9f9f9;
-                margin-bottom: 10px;
-                padding: 15px;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-            }
-
-            .menu li span {
-                float: right;
-                font-weight: bold;
-            }
-        </style>
+        <title>Tasty Bites</title>
+        <link href="https://cdn.jsdeliv.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     </head>
 
-    <body>
-        <h1>Our menu</h1>
-        <ul class="menu">
-            {% for item in menu_items %}
-            <li>{{ item.name }} <span> {{ item.price }}</span></li>
-            {% endfor %}
-        </ul>
+    <body class="bg-light">
+        <div class="container my-5">
+            <h1 class="text-center mb-4">Our Menu</h1>
+
+            <div class="row">
+                {% for item in menu_items %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        {% if item.image_url %}
+                        <img src="{{ item.image_url }}" class="card-img-top" alt="{{ item.name }}">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text">{{ item.description }}</p>
+                            <p class="fw-bold">{{ item.price }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </body>
 </html>
