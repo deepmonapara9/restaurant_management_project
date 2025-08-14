@@ -105,6 +105,27 @@
                     <button type="submit">Submit</button>
                 </form>
             </div>
+
+            <!-- Contact -->
+            <section style="margin-top: 40px">
+                <h3>Contact US</h3>
+                <form method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Your name" required style="width: 100%; padding: 10px; margin-bottom: 10px;" />
+                    <input type="email" name="email" placeholder="Your email" required style="width: 100%; padding: 10px; margin-bottom: 10px;" />
+                    <button type="submit" style="background-color: #ff6347; color: white; padding: 10px 15px; border: none; cursor: pointer;">Submit</button>
+                </form>
+            </section>
+
+            <!-- Address & Map -->
+            <section style="margin-top: 40px">
+                <h3>Our Location</h3>
+                <p>123 Food Street, Flavor Town, Delhi</p>
+                <div style="margin-top: 10px">
+                    <iframe src="https://www.google.com/maps/" width="100%" height="300" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </section>
+
         </main>
 
         <span>
