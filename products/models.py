@@ -7,6 +7,12 @@ class Item(models.Model):
     item_description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    item_image = models.ImageField(
+        upload_to='menu_images/',
+        blank=True,
+        null=True
+    )
+
     def __str__(self):
         return str(self.item_name)
 
