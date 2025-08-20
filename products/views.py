@@ -5,6 +5,7 @@ from rest_framework import status
 
 from .models import Item
 from .serializers import ItemSerializer
+from .forms import ContactForm
 
 '''
 NOTE: Conside this as a reference and follow this same coding structure or format to work on you tasks
@@ -29,3 +30,15 @@ class ItemView(APIView):
 def menu_page(request):
     items = Item.objects.all()
     return render(request, "menu.html", {"items": items})
+
+
+def contact_view(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact')
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
