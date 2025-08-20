@@ -9,3 +9,11 @@ class Item(models.Model):
 
     def __str__(self):
         return str(self.item_name)
+
+
+class RestaurantInfo(models.Model):
+    name = models.CharField(max_length=200, default="My Restaurant")
+    address = models.TextField()
+
+    def __str__(self):
+        return self.name
