@@ -2,7 +2,10 @@ from django.db import models
 
 # Create your models here.
 class RestaurantLocation(models.Model):
-    address = models.CharField(max_length=255)
+    """
+    Model to store the location of the restaurant.
+    """
+    address = models.CharField(max_length=255, default="Tasty Bites")
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     zip_code = models.CharField(max_length=20)
