@@ -52,8 +52,9 @@ def contact(request):
 
 def homepage(request):
     query = request.GET.get('q')
+    restaurant = Restaurant.objects.first()
     if query:
         menu_items = MenuItem.objects.filter(name_icontains=query)
     else:
         menu_items = MenuItem.objects.all()
-    return render(request, 'homepage.html', {'menu_items': menu_items, 'query': query})
+    return render(request, 'homepage.html', {'menu_items': menu_items, 'query': query, 'restaurant': restaurant})
