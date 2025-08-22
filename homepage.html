@@ -96,6 +96,19 @@
 
         </nav>
 
+        <form method="get" action="{% url 'homepage' %}">
+            <input type="text" name="q" placeholder="Search menu items..." value="{{ query|default:'' }}">
+            <button type="submit">Submit</button>
+        </form>
+
+        <ul>
+            {% for item in menu_items %}
+                <li>{{ item.name }} - {{ item.price }}</li>
+            {% empty %}
+                <li>No menu items found.</li>
+            {% endfor %}
+        </ul>
+
         <main>
             <h2>Welcome</h2>
             <p>We're glad to have you here.</p>
